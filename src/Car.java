@@ -12,7 +12,7 @@ public class Car {
     int consumption; //consumption per distance unit (km)
     int mileage = 0;
     
-    int numberOfPassengers;
+    int maxPassengers;
     int currentNumberOfPassengers;
     
     public Car() {
@@ -20,7 +20,7 @@ public class Car {
         this.maxFuel = 100;
         this.consumption = 5;
         this.mileage = 1000;
-        this.numberOfPassengers = 5;
+        this.maxPassengers = 5;
         this.currentNumberOfPassengers = 1;
     }
 
@@ -35,12 +35,12 @@ public class Car {
         this.maxFuel = customMaxFuel;
         this.consumption = customConsumption;
         this.currentNumberOfPassengers = currPass;
-        this.numberOfPassengers = maxPass;
+        this.maxPassengers = maxPass;
     }
     
 //    public Car(int maxPass, int currPass) {
 //        this.currentNumberOfPassengers = currPass;
-//        this.numberOfPassengers = maxPass;
+//        this.maxPassengers = maxPass;
 //    }
 
     public  void printAttributes() {
@@ -51,7 +51,7 @@ public class Car {
         System.out.println("Registracija : " + this.license);
         System.out.println("Trenutno stanje rezervoara : " + this.currentFuel);
         System.out.println("Ukupna pređena distanca: " + this.mileage);
-        System.out.println("Trenutni broj putnika je " + this.currentNumberOfPassengers + " od maksimalnih " + this.numberOfPassengers);
+        System.out.println("Trenutni broj putnika je " + this.currentNumberOfPassengers + " od maksimalnih " + this.maxPassengers);
         System.out.println();
     }
 
@@ -97,7 +97,7 @@ public class Car {
         // ako nema
         //      samo ispisi poruku da nema mesta
         
-        if (this.currentNumberOfPassengers < this.numberOfPassengers) {
+        if (this.currentNumberOfPassengers < this.maxPassengers) {
             this.currentNumberOfPassengers = this.currentNumberOfPassengers + 1;
             //this.currentNumberOfPassengers++;
             System.out.println("Someone got in. Current number: " + this.currentNumberOfPassengers);
@@ -106,6 +106,17 @@ public class Car {
         }
         
     }
+    
+    public void getIn(int numberOfPassengers) {
+        if (this.currentNumberOfPassengers + numberOfPassengers <= this.maxPassengers) {
+            this.currentNumberOfPassengers = this.currentNumberOfPassengers + numberOfPassengers;
+            System.out.println(numberOfPassengers + " got in. Current number: " + this.currentNumberOfPassengers + "\n");
+        } else {
+            System.out.println("There is no space for : " + numberOfPassengers + " passengers.\n");
+        }
+    }
+    
+    
     
     public void getOut(){
         //Da li ima vise od 1 putnika (da li ima bar jedan putnik)
@@ -122,6 +133,15 @@ public class Car {
             System.out.println("There are no more passengers.");
         }
         
+    }
+    
+    public void getOut(int numberOfPassengers) {
+        if (this.currentNumberOfPassengers >= numberOfPassengers) {
+            this.currentNumberOfPassengers = this.currentNumberOfPassengers - numberOfPassengers;
+            System.out.println(numberOfPassengers + " got out. Current number: " + this.currentNumberOfPassengers + "\n");
+        } else {
+            System.out.println("There are no " + numberOfPassengers + " passengers in the car.\n");
+        }
     }
     
     

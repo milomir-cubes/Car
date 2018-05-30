@@ -1,4 +1,7 @@
 
+import loops.Loops;
+
+
 public class Main {
 
     
@@ -10,8 +13,7 @@ public class Main {
 //        myCar.printAttributes();
 //        double distance = myCar.maxDistance();
 //        System.out.println("Maksimalna distanca je: " + distance);
-        
-        
+                
         
 //        Car audi = new Car("Audi", 50, 2);
 //        audi.printAttributes();
@@ -27,24 +29,45 @@ public class Main {
 //        audi.travel(30);
 //        audi.printAttributes();
         
-        Car noviAuto = new Car("Novi Auto", 100, 3, 4, 1);
-        noviAuto.printAttributes();
+//        Car noviAuto = new Car("Novi Auto", 100, 3, 4, 1);
+//        noviAuto.printAttributes();
+//        
+//        noviAuto.getIn(3);
+//        noviAuto.getIn(4);
+//        noviAuto.printAttributes();
+//
+//        noviAuto.getOut(2);
+//        noviAuto.getOut(5);
+//        noviAuto.printAttributes();
         
-        noviAuto.getIn();
-        noviAuto.getIn();
-        noviAuto.getIn();
-        noviAuto.getIn();
-        noviAuto.getIn();
-        noviAuto.printAttributes();
+        
+//        int x = 0;
+//        while(x > 0) {
+//            System.out.println(x);
+//            x = x - 1; //x--;
+//        }
+        
+        
+//        do {
+//            System.out.println(x);
+//            x--;
+//        } while(x > 0);
+        
+        
+//        for(int i = 7; i <= 15; i++) {
+//            System.out.println(i);
+//        }
 
-        noviAuto.getOut();
-        noviAuto.getOut();
-        noviAuto.getOut();
-        noviAuto.getOut();
-        noviAuto.getOut();
-        noviAuto.getOut();
-        noviAuto.printAttributes();
-        
+
+//        Loops loop1 = new Loops();
+//        loop1.testForLoop();
+            
+//        Loops.testWhileLoop();
+//        Loops.testForLoop();
+//        Loops.testDoubleForLoop();
+//        Loops.printMultiplicationTable();
+        Loops.printCoordinates();
+
     }
     
 }
